@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Schedule - Pristine Premier League</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">PPL</span>
+                    <span class="logo-cricket">🏏</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Register</a></li>
+                <li><a href="teams.html">View Teams</a></li>
+                <li><a href="schedule.html" class="active">Schedule</a></li>
+            </ul>
+            <div id="userInfo" class="user-info"></div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Tournament Schedule & Draw</h1>
+            <p class="tagline">League Groups and Match Schedule</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="switchCategory('men')">Men's Tournament</button>
+            <button class="tab-btn" onclick="switchCategory('women')">Women's Tournament</button>
+        </div>
+
+        <div id="scheduleContent">
+            <div class="schedule-actions">
+                <button class="btn-generate" onclick="generateSchedule()">Generate Draw & Schedule</button>
+                <p class="help-text">Click to create groups and match schedule based on registered teams</p>
+            </div>
+
+            <div id="groupsSection" style="display: none;">
+                <h2>League Groups</h2>
+                <div id="groupsDisplay" class="groups-container"></div>
+            </div>
+
+            <div id="matchesSection" style="display: none;">
+                <h2>League Matches</h2>
+                <div id="leagueMatches" class="matches-container"></div>
+            </div>
+
+            <div id="knockoutSection" style="display: none;">
+                <h2>Knockout Stage</h2>
+                <div id="knockoutMatches" class="matches-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pristine Premier League. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+    <script src="tournament-config.js"></script>
+    <script src="schedule.js"></script>
+    <script>initAuth();</script>
+</body>
+</html>

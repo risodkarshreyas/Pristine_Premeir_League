@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pristine Premier League</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">PPL</span>
+                    <span class="logo-cricket">🏏</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Pristine Premier League</h1>
+            <p class="tagline">Login to Continue</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="login-container">
+            <div class="login-card">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input type="text" id="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
+
+                <div class="demo-credentials">
+                    <h3>Demo Credentials</h3>
+                    <div class="credential-box">
+                        <strong>Admin:</strong>
+                        <p>Username: admin</p>
+                        <p>Password: admin123</p>
+                    </div>
+                    <div class="credential-box">
+                        <strong>User:</strong>
+                        <p>Username: user</p>
+                        <p>Password: user123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pristine Premier League. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

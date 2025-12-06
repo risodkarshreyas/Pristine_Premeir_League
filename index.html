@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pristine Premier League - Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-text">PPL</span>
+                    <span class="logo-cricket">🏏</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Register</a></li>
+                <li><a href="teams.html">View Teams</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+            </ul>
+            <div id="userInfo" class="user-info"></div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Pristine Premier League</h1>
+            <p class="tagline">Register Your Team - 16 Teams Competition</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tournament-config">
+            <h2>Tournament Configuration</h2>
+            <div class="config-grid">
+                <div class="config-card">
+                    <h3>Men's Category</h3>
+                    <label for="menTeams">Maximum Teams:</label>
+                    <select id="menTeams" onchange="updateConfig('men', this.value)">
+                        <option value="8">8 Teams</option>
+                        <option value="16" selected>16 Teams</option>
+                    </select>
+                    <p class="config-status">Registered: <span id="menRegistered">0</span></p>
+                </div>
+                <div class="config-card">
+                    <h3>Women's Category</h3>
+                    <label for="womenTeams">Maximum Teams:</label>
+                    <select id="womenTeams" onchange="updateConfig('women', this.value)">
+                        <option value="4">4 Teams</option>
+                        <option value="8" selected>8 Teams</option>
+                    </select>
+                    <p class="config-status">Registered: <span id="womenRegistered">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="registration-status">
+            <h2>Registration Status</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <h3>Men's Teams</h3>
+                    <div class="status-bar">
+                        <span id="men-registered">0</span> / <span id="men-max">16</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="men-progress" class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <h3>Women's Teams</h3>
+                    <div class="status-bar">
+                        <span id="women-registered">0</span> / <span id="women-max">8</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="women-progress" class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="registration-form">
+            <h2>Team Registration Form</h2>
+            <p class="form-note">Each team consists of 6 players (1 Captain + 5 Players)</p>
+            <form id="teamForm">
+                <div class="section-divider">
+                    <h3>Team Information</h3>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category *</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="teamName">Team Name *</label>
+                    <input type="text" id="teamName" required>
+                </div>
+
+                <div class="section-divider">
+                    <h3>Captain Details</h3>
+                </div>
+
+                <div class="form-group">
+                    <label for="captainName">Captain Name *</label>
+                    <input type="text" id="captainName" required>
+                </div>
+
+                <div class="form-row"></div>
+                    <div class="form-group">
+                        <label for="captainPhone">Captain Phone *</label>
+                        <input type="tel" id="captainPhone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="captainEmail">Captain Email *</label>
+                        <input type="email" id="captainEmail" required>
+                    </div>
+                </div>
+
+                <div class="section-divider">
+                    <h3>Other Players (5 Players)</h3>
+                </div>
+
+                <div id="playersContainer">
+                    <!-- Player 1 -->
+                    <div class="player-section">
+                        <h4>Player 1</h4>
+                        <div class="form-group">
+                            <label for="player1Name">Name *</label>
+                            <input type="text" id="player1Name" required>
+                        </div>
+                    </div>
+
+                    <!-- Player 2 -->
+                    <div class="player-section">
+                        <h4>Player 2</h4>
+                        <div class="form-group">
+                            <label for="player2Name">Name *</label>
+                            <input type="text" id="player2Name" required>
+                        </div>
+                    </div>
+
+                    <!-- Player 3 -->
+                    <div class="player-section">
+                        <h4>Player 3</h4>
+                        <div class="form-group">
+                            <label for="player3Name">Name *</label>
+                            <input type="text" id="player3Name" required>
+                        </div>
+                    </div>
+
+                    <!-- Player 4 -->
+                    <div class="player-section">
+                        <h4>Player 4</h4>
+                        <div class="form-group">
+                            <label for="player4Name">Name *</label>
+                            <input type="text" id="player4Name" required>
+                        </div>
+                    </div>
+
+                    <!-- Player 5 -->
+                    <div class="player-section">
+                        <h4>Player 5</h4>
+                        <div class="form-group">
+                            <label for="player5Name">Name *</label>
+                            <input type="text" id="player5Name" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions-row">
+                    <button type="submit" class="btn-submit">Register Team</button>
+                    <button type="button" class="btn-reset" onclick="resetForm()">Reset Form</button>
+                </div>
+            </form>
+        </section>
+
+        <div class="admin-section admin-only">
+            <h2>Admin Actions</h2>
+            <button class="btn-danger admin-action" onclick="resetAllData()">Reset All Data</button>
+            <p class="warning-text">⚠️ This will delete all teams, schedules, and reset configuration</p>
+        </div>
+    </main>label>h3>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pristine Premier League. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+    <script src="tournament-config.js"></script>
+    <script src="script.js"></script>
+    <script>initAuth();</script>
+</body>
+</html>

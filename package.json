@@ -1,7 +1,7 @@
 {
-  "name": "pristine-premier-league",
+  "name": "pristine-premier-league-2026",
   "version": "1.0.0",
-  "description": "Box Cricket Premier League Registration System",
+  "description": "Pristine Premier League 2026 - Box Cricket Tournament Management System",
   "main": "server.js",
   "engines": {
     "node": ">=14.0.0",
